@@ -1,0 +1,194 @@
+body{
+    background-color: #ffe752;
+}
+#page1{
+    width: 100%;
+    overflow-x: hidden;
+    img{
+        width: 100%;
+    }
+    .page11{
+        width: 100%;
+        position: relative;
+        .page111{
+            position: absolute;
+            width: 91.06%;
+            left: 4.47%;
+            top: 2.2%;
+        }
+        .page112{
+            position: absolute;
+            width: 54.94%;
+            left: 22.53%;
+            top: 44.6%;
+        }
+        .page113{
+            position: absolute;
+            width: 75.46%;
+            left: 12.27%;
+            top: 40.39%;
+        }
+    }
+    .page12{
+        width: 75.72%;
+        margin:0.2rem 0 0.7rem  17.73%;
+        position: relative;
+    }
+    .page121{
+        position: absolute;
+        width: 1.26rem;
+        height: 1.26rem;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 50%;
+        left: -0.85rem;
+        margin-top: -0.63rem;
+        z-index: 5;
+    }
+    .page1211{
+        position: absolute;
+        top: 1.3rem;
+        left: 0;
+        width: 1.66rem;
+        left: -1.05rem;
+        text-align: center;
+        font-size: 0.24rem;
+    }
+    .page122{
+        position: absolute;
+        left: 0;
+        top: 25.385%;
+        height: 49.23%;
+        width: 79.8%;
+        background: url(../img/sni8.png) repeat-x left top;
+        background-size:auto 100%;
+        z-index: 2;
+    }
+    .page1221{
+        position: absolute;
+        right: 100%;
+        top: 0;
+        height: 100%;
+        >img{
+            width: auto;
+            height: 100%;
+        }
+    }
+    .page1222{
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        display: none;
+        >img{
+            width: auto;
+            height: 100%;
+        }
+    }
+    .page123{
+        position: absolute;
+        width: 1.22rem;
+        height: 1.3rem;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 50%;
+        right: 0.02rem;
+        margin-top: -0.61rem;
+    }
+    .page1212{
+        position: absolute;
+        width: 1.62rem;
+        top: 1.3rem;
+        right: -0.18rem;
+        font-size: 0.24rem;
+        text-align: center;
+    }
+    .page124{
+        position: absolute;
+        width: 30.28%;
+        top: 8%;
+        right: -0.1rem;
+        z-index: 6;
+        margin-top: -0.61rem;
+    }
+    .page125{
+        position: absolute;
+        width: 22%;
+        right: 84%;
+        bottom: 78%;
+        z-index: 10;
+        p{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 0.24rem;
+            text-align: center;
+            line-height: 0.6rem;
+            color: white;
+        }
+    }
+    .page13{
+        width: 57.86%;
+        margin: 0 auto 0.2rem;
+        a{
+            display: block;
+            >img{
+                width: 100%;
+            }
+        }
+    }
+}
+.changePage{
+    width: 98.13%;
+    margin: 0 auto;
+    position: relative;
+    .changeBtn{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        button{
+            width: 33%;
+            display: block;
+            line-height: 0.94rem;
+            margin-right: 0.5%;
+            border-radius: 0.08rem;
+            background-color: #ff322f;
+            font-size: 0.32rem;
+            color: white;
+        }
+        button:nth-last-child(1){
+            margin-right: 0%;
+        }
+        .btnCheck{
+            background-color: #fa5856;
+            position: relative;
+        }
+        .btnCheck::after{
+            position: absolute;
+            content: "";
+            height: 0.5rem;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            background: url(../img/sni14.png) no-repeat;
+            background-size: 100%;
+        }
+    }
+    .changeContent1{
+        padding-top: 0.1rem;
+        ul li{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+            a{
+                display: block;
+                width: 100%;
+                margin-top: 0.2rem;
+            }
+        }
+    }
+}
