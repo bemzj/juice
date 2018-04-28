@@ -24,6 +24,21 @@ body {
       width: 75.46%;
       left: 12.27%;
       top: 40.39%; }
+    #page1 .page11 .page1111 {
+      position: absolute;
+      width: 72%;
+      left: 14%;
+      top: 2.2%; }
+    #page1 .page11 .entry {
+      position: absolute;
+      width: 92%;
+      left: 4%;
+      top: 34%;
+      font-size: 0.3rem;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff; }
   #page1 .page12 {
     width: 75.72%;
     margin: 0.2rem 0 0.7rem  17.73%;
@@ -112,11 +127,16 @@ body {
       color: white; }
   #page1 .page13 {
     width: 57.86%;
-    margin: 0 auto 0.2rem; }
+    margin: 0 auto 0.3rem; }
     #page1 .page13 a {
       display: block; }
       #page1 .page13 a > img {
         width: 100%; }
+  #page1 .page131 {
+    width: 80.53%; }
+
+.hdd {
+  display: none !important; }
 
 .changePage {
   width: 98.13%;
@@ -125,7 +145,7 @@ body {
   .changePage .changeBtn {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -0.1rem;
     width: 100%;
     z-index: 100; }
     .changePage .changeBtn button {
@@ -151,15 +171,196 @@ body {
       width: 100%;
       background: url(../img/sni14.png) no-repeat;
       background-size: 100%; }
-  .changePage .changeContent1 {
-    padding-top: 0.1rem; }
-    .changePage .changeContent1 ul li {
+  .changePage .changeContent1 ul li {
+    width: 100%; }
+    .changePage .changeContent1 ul li img {
       width: 100%; }
-      .changePage .changeContent1 ul li img {
-        width: 100%; }
-      .changePage .changeContent1 ul li a {
-        display: block;
-        width: 100%;
-        margin-top: 0.2rem; }
+    .changePage .changeContent1 ul li a {
+      display: block;
+      width: 100%;
+      margin-top: 0.2rem; }
+  .changePage .changeContent2 {
+    margin: 0rem 0 0.2rem;
+    padding: 1.38rem 0 0.04rem;
+    background-color: white;
+    border-radius: 0.08rem; }
+    .changePage .changeContent2 ul {
+      width: 97.28%;
+      margin: 0 auto; }
+      .changePage .changeContent2 ul li {
+        margin-bottom: 0.2rem; }
+  .changePage .changeContent3 {
+    padding-bottom: 0.2rem; }
+
+.noHelp {
+  width: 100%;
+  padding-top: 1.1rem;
+  background-color: #fff0a2;
+  border-radius: 0.08rem; }
+  .noHelp > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    height: 3.0rem;
+    font-size: 0.4rem; }
+
+.help {
+  padding-top: 1.34rem;
+  background-color: #fff0a2;
+  border-radius: 0.08rem; }
+  .help > div {
+    width: 86.96%;
+    margin: 0 auto;
+    padding-bottom: 0.3rem; }
+    .help > div .HelpTitle {
+      width: 100%;
+      height: 0.88rem;
+      border-radius: 0.12rem;
+      background-color: #fa5856;
+      color: #ffffff;
+      line-height: 0.88rem;
+      text-align: center;
+      font-size: 0.34rem; }
+      .help > div .HelpTitle span {
+        font-size: 0.4rem;
+        color: #ffe752; }
+    .help > div .helpMan {
+      margin-top: 0.15rem;
+      padding: 0.25rem 0;
+      border-radius: 0.12rem;
+      background-color: white;
+      position: relative; }
+      .help > div .helpMan .helpRight {
+        width: 71.5%;
+        margin-left: 23.125%;
+        color: #666666;
+        line-height: 0.4rem;
+        font-size: 0.28rem; }
+        .help > div .helpMan .helpRight span {
+          color: #e91201;
+          font-weight: bold; }
+      .help > div .helpMan .helpLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 23.125%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        -webkit-flex-direction: column; }
+        .help > div .helpMan .helpLeft .headImg {
+          width: 0.9rem;
+          height: 0.9rem;
+          overflow: hidden;
+          border-radius: 50%; }
+
+@font-face {
+  font-family: zcool;
+  src: url("../fonts/zcool.ttf"); }
+.pw {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  -webkit-flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .pw .getJuice {
+    width: 89.86%;
+    position: relative; }
+    .pw .getJuice img {
+      width: 100%; }
+    .pw .getJuice .gj1 {
+      position: absolute;
+      width: 36.64%;
+      left: 31.68%;
+      top: 12%; }
+    .pw .getJuice .gj2 {
+      position: absolute;
+      width: 37.1%;
+      left: 31.45%;
+      top: 29%; }
+    .pw .getJuice .gj3 {
+      position: absolute;
+      width: 68%;
+      height: 14%;
+      left: 16%;
+      top: 71%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      -webkit-flex-direction: column; }
+      .pw .getJuice .gj3 p {
+        text-align: center;
+        font-size: 0.3rem;
+        font-family: 'zcool';
+        color: #666666; }
+        .pw .getJuice .gj3 p span {
+          color: #f44b49;
+          font-size: 0.42rem;
+          font-family: arial; }
+    .pw .getJuice .gj4 {
+      position: absolute;
+      width: 68%;
+      height: 14%;
+      left: 16%;
+      top: 32%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      -webkit-flex-direction: column; }
+      .pw .getJuice .gj4 p {
+        text-align: center;
+        font-size: 0.42rem;
+        font-weight: bold;
+        color: #333333; }
+    .pw .getJuice .gj5 {
+      top: 40%;
+      height: 40%; }
+      .pw .getJuice .gj5 p {
+        font-weight: normal;
+        font-size: 0.36rem; }
+  .pw .jClose {
+    width: 12.68%;
+    margin: -0.74rem auto 0; }
+    .pw .jClose a {
+      display: block; }
+    .pw .jClose img {
+      width: 100%; }
+
+#share .share1 {
+  width: 50.13%; }
+#share img {
+  width: 100%; }
+#share .share2 {
+  width: 66.67%;
+  margin-top: 0.4rem; }
 
 /*# sourceMappingURL=index.css.map */

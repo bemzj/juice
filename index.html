@@ -21,7 +21,7 @@
 			<div id="page1">
 				<div class="page11">
 					<img src="img/sni3.png" />
-					<div class="page111"  :class="{animated:home,bounceInDown:home}">
+					<div class="page111"  :class="{animated:home,bounceInDown:home,page1111:entryCode==2}" >
 						<img src="img/sni4.png" />
 					</div>
 					<div class="page112"  :class="{animated:home,bounceIn:home}">
@@ -29,6 +29,9 @@
 					</div>
 					<div class="page113">
 						<img src="img/sni2.png" />
+					</div>
+					<div class="entry animated fadeInUp" v-if="entryCode==2">
+						<p>{{entryName}}：快！帮我榨果汁，免费领榨汁机套餐</p>
 					</div>
 				</div>
 				<div class="page12">
@@ -62,18 +65,28 @@
 						<p>{{wxNumber}}毫升</p>
 					</div>
 				</div>
-				<div class="page13">
-					<a href="###">
+				<div class="page13"  :class="{animated:home,rotateIn:home,page131:btnCode==5}">
+					<a href="###" v-if="btnCode==1">
 						<img src="img/sni13.png" />
+					</a>
+					<a href="###" v-else-if="btnCode==2">
+						<img src="img/sni36.png" />
+					</a>
+					<a href="###" v-else-if="btnCode==3">
+						<img src="img/sni34.png" />
+					</a>
+					<a href="###" v-else-if="btnCode==4">
+						<img src="img/sni35.png" />
+					</a>
+					<a href="###" v-else="btnCode==5">
+						<img src="img/sni37.png" />
 					</a>
 				</div>
 				<div class="changePage">
 					<div class="changeBtn clearFloat">
-						<button class="floatl">新鲜果粉团</button>
-						<button class="floatl btnCheck">便携式榨汁机</button>
-						<button class="floatl">活动说明</button>
+						<button v-for="(item, index) in threeBtn" class="floatl" :class="{btnCheck:change==index}" @click="threeChoice(index)">{{item}}</button>
 					</div>
-					<div class="changeContent1">
+					<div class="changeContent1" v-show="change==1">
 						<ul>
 							<li>
 								<img src="img/sni15.png"  data-scroll-reveal="enter from the top over 0.5s"/>
@@ -92,37 +105,146 @@
 							</li>
 						</ul>
 					</div>
+					<div class="changeContent2" v-show="change==2">
+						<ul>
+							<li v-for="i in rules">
+								<img :src="i.src" :class="i.class" />
+							</li>
+						</ul>
+					</div>
+					<div class="changeContent3" v-show="change==0">
+						<div  class="noHelp" v-if="help==0">
+							<div>
+								<p>还没有朋友帮忙~</p>
+							</div>
+						</div>
+						<div  class="help" v-else="help==1">
+							<div>
+								<div class="HelpTitle">
+									<p>以下为最近 <span>{{elseHelpN}}</span>位帮忙的热心好友</p>
+								</div>
+								<div class="helpMan" v-for="(i,index) in elseHelp"  :class="[index%2==0?'animated fadeInLeft':'animated fadeInRight']">
+									<div class="helpLeft">
+										<div class="headImg">
+											<img :src="i.wxSrc" />
+										</div>
+									</div>
+									<div class="helpRight">
+										<p><span>{{i.wxName}}</span>运气不错哟，一下子帮忙榨取了<span>{{i.wxNumber}}ml</span>新鲜果汁</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		
 	</body>
+	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
+//		sharing();
 		var app =  new Vue({
 		  el:'#app',
 		  data:{
 		  	home:true,//首页
 		  	wxNumber:1000,//毫升数
 		  	wxSrc:'img/sni7.png',//微信头像
-		  	wxName:'阿木',
-		  	proName:'榨汁1000毫升即中奖'
+		  	wxName:'阿木',//微信名
+		  	proName:'榨汁1000毫升即中奖',//奖品名称
+		  	change:0,//改变模块
+		  	entryCode:2,//自己进入还是从链接进入
+		  	btnCode:5,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
+		  	entryName:'隔壁老李',
+		  	rules:[
+		  		{
+		  			'src':'img/sni20.png',
+		  			'class':'animated fadeInLeft'
+		  		},
+		  		{
+		  			'src':'img/sni21.png',
+		  			'class':'animated fadeInRight'
+		  		},
+		  		{
+		  			'src':'img/sni22.png',
+		  			'class':'animated fadeInLeft'
+		  		},
+		  		{
+		  			'src':'img/sni23.png',
+		  			'class':'animated fadeInRight'
+		  		},
+		  		{
+		  			'src':'img/sni24.png',
+		  			'class':'animated fadeInLeft'
+		  		}]
+		  	,//规则
+			threeBtn:[
+				"新鲜果粉团",
+				"便携式榨汁机",
+				"活动说明"
+			],
+			help:1,
+			elseHelpN:0,
+			elseHelp:[
+				{
+					wxName:'阿木0',
+					wxSrc:'img/sni7.png',
+					wxNumber:'380'
+				},
+				{
+					wxName:'阿木1',
+					wxSrc:'img/sni7.png',
+					wxNumber:'380'
+				},
+				{
+					wxName:'阿木2',
+					wxSrc:'img/sni7.png',
+					wxNumber:'380'
+				},
+				{
+					wxName:'阿木3',
+					wxSrc:'img/sni7.png',
+					wxNumber:'380'
+				},
+				{
+					wxName:'阿木4',
+					wxSrc:'img/sni7.png',
+					wxNumber:'380'
+				}
+			]
 		  },
 		  methods:{
 		  	backTop(){
-
 		  		$('html,body').animate({  
-	            scrollTop: 0
-	        }, 500); 
+	            	scrollTop: 0
+	        	}, 500); 
+		  	},
+		  	threeChoice(e){
+		  		var self = this;
+		  		self.change = e;
+		  		if(e==1)
+		  		{
+		  			var top = $(document).scrollTop();
+		  			top+=1.5;
+		  			$('html,body').animate({  
+	            		scrollTop: top
+	        		}, 500);
+		  		}
 		  	}
 		  },
 		  created:function(){
-		  	
+		  	var self = this;
+		  	self.elseHelpN = self.elseHelp.length;
 		  }
 		})
 		//开启滑动动画
 			if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
 					(function(){
-					window.scrollReveal = new scrollReveal({reset: true});
+					window.scrollReveal = new scrollReveal(
+					{
+						reset: true,
+					});
 				})();
 			};
 	</script>
