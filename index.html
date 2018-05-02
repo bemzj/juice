@@ -49,18 +49,23 @@
 						<div class="page1221">
 							<img src="img/sni10.png" />
 						</div>
-						<div class="page1222">
+						<div class="page1222" style="display: block;">
 							<img src="img/sni11.png" />
 						</div>
 						
 					</div>
 					<div class="page123">
-						<img src="img/sni9.png" />
+						<div class="page1232">
+							<div class="page1231">
+								<img src="img/sni9.png" />
+							</div>
+						</div>
+						
 					</div>
-					<div class="page124">
+					<div class="page124" >
 						<img src="img/sni12.png" />
 					</div>
-					<div class="page125" :class="{animated:home,bounceIn:home}">
+					<div class="page125">
 						<img src="img/sni5.png" />
 						<p>{{wxNumber}}毫升</p>
 					</div>
@@ -100,10 +105,8 @@
 							<li>
 								<img src="img/sni18.png"  data-scroll-reveal="enter from the bottom  over 0.5s"/>
 							</li>
-							<li>
-								<a href="###" @click="backTop"><img src="img/sni19.png"/></a>
-							</li>
 						</ul>
+						<a href="###" @click="backTop" style="display: none;"><img src="img/sni19.png"/></a>
 					</div>
 					<div class="changeContent2" v-show="change==2">
 						<ul>
@@ -149,13 +152,13 @@
 		  el:'#app',
 		  data:{
 		  	home:true,//首页
-		  	wxNumber:1000,//毫升数
+		  	wxNumber:800,//毫升数
 		  	wxSrc:'img/sni7.png',//微信头像
 		  	wxName:'阿木',//微信名
 		  	proName:'榨汁1000毫升即中奖',//奖品名称
 		  	change:0,//改变模块
-		  	entryCode:2,//自己进入还是从链接进入
-		  	btnCode:5,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
+		  	entryCode:1,//自己进入还是从链接进入
+		  	btnCode:1,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
 		  	entryName:'隔壁老李',
 		  	rules:[
 		  		{
@@ -236,6 +239,37 @@
 		  created:function(){
 		  	var self = this;
 		  	self.elseHelpN = self.elseHelp.length;
+		  	
+		  	var wxvar = self.wxNumber/1000;
+		  	setTimeout(function(){
+		  		if(wxvar<=0.74)
+			  	{
+			  		
+			  		$('.page122').css('width',wxvar*100+'%');
+			  		$('.page125').css('left',(wxvar-0.1)*100+'%').show().addClass('animated bounceIn');
+			  	}else{
+			  		$('.page122').css('width','79.8%');
+			  		setTimeout(function(){
+			  			$('#page1 .page1222').fadeOut(50);
+			  		},900)
+			  		setTimeout(function(){
+			  			$('#page1 .page123 .page1232').css('width',parseInt((wxvar-0.74)/0.26*100)+'%');
+			  			$('.page125').css({'left':'78%','bottom':'100%'}).show().addClass('animated bounceIn');
+			  		},680);
+			  	}
+			  	
+		  	},1000);
+		  	
+		  	//距离
+			var topShow = $('#page1 .page13 a').offset().top+ $('#page1 .page13 a').height();
+			$(window).scroll(function(){
+				if($(this).scrollTop()>parseInt(topShow))
+				{
+					$('.changePage .changeContent1 a').fadeIn(500);
+				}else{
+					$('.changePage .changeContent1 a').fadeOut(500);
+				}
+			});
 		  }
 		})
 		//开启滑动动画

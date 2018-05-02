@@ -1,3 +1,6 @@
+$(function(){
+	
+});
 //点击获取
 function gJuice(id,n){
 	$('#getJuice').remove();

@@ -66,10 +66,14 @@ body {
     left: 0;
     top: 25.385%;
     height: 49.23%;
-    width: 79.8%;
+    width: 0%;
     background: url(../img/sni8.png) repeat-x left top;
     background-size: auto 100%;
-    z-index: 2; }
+    z-index: 2;
+    transition: width 1s;
+    -webkit-transition: width 1s;
+    -moz-transition: width 1s;
+    -ms-transition: width 1s; }
   #page1 .page1221 {
     position: absolute;
     right: 100%;
@@ -90,12 +94,28 @@ body {
   #page1 .page123 {
     position: absolute;
     width: 1.22rem;
-    height: 1.3rem;
-    border-radius: 50%;
-    overflow: hidden;
+    height: 1.24rem;
     top: 50%;
     right: 0.02rem;
     margin-top: -0.61rem; }
+    #page1 .page123 .page1232 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      overflow: hidden;
+      transition: width 0.5s;
+      -webkit-transition: width 0.5s;
+      -moz-transition: width 0.5s;
+      -ms-transition: width 0.5s; }
+    #page1 .page123 .page1231 {
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+      #page1 .page123 .page1231 > img {
+        width: 1.22rem;
+        height: 1.24rem; }
   #page1 .page1212 {
     position: absolute;
     width: 1.62rem;
@@ -115,7 +135,9 @@ body {
     width: 22%;
     right: 84%;
     bottom: 78%;
-    z-index: 10; }
+    left: -5%;
+    z-index: 10;
+    display: none; }
     #page1 .page125 p {
       position: absolute;
       top: 0;
@@ -171,14 +193,18 @@ body {
       width: 100%;
       background: url(../img/sni14.png) no-repeat;
       background-size: 100%; }
-  .changePage .changeContent1 ul li {
-    width: 100%; }
-    .changePage .changeContent1 ul li img {
+  .changePage .changeContent1 {
+    padding-bottom: 1.2rem; }
+    .changePage .changeContent1 ul li {
       width: 100%; }
-    .changePage .changeContent1 ul li a {
+      .changePage .changeContent1 ul li img {
+        width: 100%; }
+    .changePage .changeContent1 a {
+      position: fixed;
+      bottom: 0;
       display: block;
       width: 100%;
-      margin-top: 0.2rem; }
+      left: 0; }
   .changePage .changeContent2 {
     margin: 0rem 0 0.2rem;
     padding: 1.38rem 0 0.04rem;
