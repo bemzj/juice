@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #ffe752; }
 
@@ -6,39 +7,6 @@ body {
   overflow-x: hidden; }
   #page1 img {
     width: 100%; }
-  #page1 .page11 {
-    width: 100%;
-    position: relative; }
-    #page1 .page11 .page111 {
-      position: absolute;
-      width: 91.06%;
-      left: 4.47%;
-      top: 2.2%; }
-    #page1 .page11 .page112 {
-      position: absolute;
-      width: 54.94%;
-      left: 22.53%;
-      top: 44.6%; }
-    #page1 .page11 .page113 {
-      position: absolute;
-      width: 75.46%;
-      left: 12.27%;
-      top: 40.39%; }
-    #page1 .page11 .page1111 {
-      position: absolute;
-      width: 72%;
-      left: 14%;
-      top: 2.2%; }
-    #page1 .page11 .entry {
-      position: absolute;
-      width: 92%;
-      left: 4%;
-      top: 34%;
-      font-size: 0.3rem;
-      font-weight: bold;
-      color: #333333;
-      text-align: center;
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff; }
   #page1 .page12 {
     width: 75.72%;
     margin: 0.2rem 0 0.7rem  17.73%;
@@ -61,7 +29,7 @@ body {
     left: -1.05rem;
     text-align: center;
     font-size: 0.24rem; }
-  #page1 .page122 {
+  #page1 .page122, #page1 .page1223 {
     position: absolute;
     left: 0;
     top: 25.385%;
@@ -74,6 +42,11 @@ body {
     -webkit-transition: width 1s;
     -moz-transition: width 1s;
     -ms-transition: width 1s; }
+  #page1 .page1223 {
+    transition: width 0.8s;
+    -webkit-transition: width 0.8s;
+    -moz-transition: width 0.8s;
+    -ms-transition: width 0.8s; }
   #page1 .page1221 {
     position: absolute;
     right: 100%;
@@ -291,6 +264,136 @@ body {
           overflow: hidden;
           border-radius: 50%; }
 
+.page11 {
+  width: 100%;
+  position: relative; }
+  .page11 .page111 {
+    position: absolute;
+    width: 91.06%;
+    left: 4.47%;
+    top: 2.2%; }
+  .page11 .page1112 {
+    width: 96%;
+    height: 2.4rem;
+    position: absolute;
+    left: 2%;
+    top: 6.3%;
+    border-radius: 0.08rem;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    font-size: 0.5rem;
+    color: #ffffff; }
+    .page11 .page1112 > div {
+      width: 90%;
+      position: relative; }
+      .page11 .page1112 > div p:nth-child(2) {
+        position: absolute;
+        bottom: 50%;
+        left: 43%;
+        width: 25%;
+        text-align: center;
+        font-weight: bold;
+        color: #fa5856; }
+      .page11 .page1112 > div p:nth-child(3) {
+        position: absolute;
+        top: 45%;
+        left: 12.5%;
+        width: 25%;
+        text-align: center;
+        font-weight: bold;
+        color: #fa5856; }
+  .page11 .page1113 {
+    width: 96%;
+    height: 2.4rem;
+    position: absolute;
+    left: 2%;
+    top: 6.3%;
+    border-radius: 0.08rem;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    font-size: 0.5rem;
+    color: #ffffff; }
+    .page11 .page1113 .cf {
+      display: inline-block; }
+      .page11 .page1113 .cf ul li {
+        display: inline-block; }
+      .page11 .page1113 .cf ul li:nth-child(3) {
+        width: 8%; }
+      .page11 .page1113 .cf ul li div {
+        color: #fa5856;
+        font-weight: bold;
+        font-size: 0.68rem;
+        line-height: 0.6rem;
+        position: relative; }
+        .page11 .page1113 .cf ul li div p:nth-child(1) {
+          opacity: 0; }
+        .page11 .page1113 .cf ul li div p:nth-child(2) {
+          position: absolute;
+          left: 0;
+          bottom: 0.12rem; }
+      .page11 .page1113 .cf ul li:nth-child(1) {
+        width: 32.8%; }
+    .page11 .page1113 .page11131 {
+      width: 83.33%; }
+  .page11 .page1114 {
+    width: 96%;
+    height: 2.4rem;
+    position: absolute;
+    left: 2%;
+    top: 6.3%;
+    border-radius: 0.08rem;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    font-size: 0.56rem;
+    color: #fa5856;
+    font-weight: bold; }
+  .page11 .page112 {
+    position: absolute;
+    width: 54.94%;
+    left: 22.53%;
+    top: 44.6%; }
+  .page11 .page113 {
+    position: absolute;
+    width: 75.46%;
+    left: 12.27%;
+    top: 40.39%; }
+  .page11 .page1111 {
+    position: absolute;
+    width: 72%;
+    left: 14%;
+    top: 2.2%; }
+  .page11 .entry {
+    position: absolute;
+    width: 92%;
+    left: 4%;
+    top: 34%;
+    font-size: 0.3rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff; }
+
 @font-face {
   font-family: zcool;
   src: url("../fonts/zcool.ttf"); }
@@ -388,5 +491,119 @@ body {
 #share .share2 {
   width: 66.67%;
   margin-top: 0.4rem; }
+
+#page2 {
+  width: 100%;
+  overflow-x: hidden; }
+  #page2 img {
+    width: 100%; }
+  #page2 .page21 {
+    font-size: 0.32rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #333333;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    margin-top: -0.2rem; }
+    #page2 .page21 > div {
+      border-radius: 0.08rem;
+      background-color: white;
+      height: 100%;
+      width: 96%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      -webkit-flex-direction: column; }
+      #page2 .page21 > div > div:nth-child(3) {
+        color: #fa5856; }
+    #page2 .page21 .clearFloat {
+      height: 64%;
+      width: 88%; }
+      #page2 .page21 .clearFloat > div {
+        height: 100%; }
+      #page2 .page21 .clearFloat img {
+        width: auto;
+        height: 100%; }
+
+#address .address {
+  width: 96%;
+  position: relative; }
+  #address .address img {
+    width: 100%; }
+  #address .address .gj1 {
+    position: absolute;
+    width: 36.64%;
+    left: 31.68%;
+    top: 12%; }
+  #address .address .gj2 {
+    position: absolute;
+    width: 68%;
+    left: 16%;
+    top: 24%;
+    font-size: 0.36rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column; }
+  #address .address .inputBox {
+    position: absolute;
+    top: 33%;
+    left: 16%;
+    width: 68%;
+    height: 50%; }
+    #address .address .inputBox ul li {
+      width: 74%;
+      margin-left: 25%;
+      height: 0.6rem;
+      border: 1px solid #cccccc;
+      border-radius: 0.05rem;
+      position: relative;
+      margin-bottom: 0.22rem; }
+    #address .address .inputBox p {
+      font-size: 0.22rem;
+      margin-bottom: 0.22rem;
+      text-align: center; }
+    #address .address .inputBox ul li input {
+      width: 92%;
+      margin: 0 auto;
+      height: 100%;
+      border: 0;
+      display: block; }
+    #address .address .inputBox ul li::before {
+      content: "收货姓名";
+      font-size: 0.26rem;
+      line-height: 0.5rem;
+      position: absolute;
+      width: 30%;
+      top: 50%;
+      margin-top: -0.25rem;
+      right: 102%; }
+    #address .address .inputBox ul li:nth-child(2)::before {
+      content: "收货地址"; }
+    #address .address .inputBox ul li:nth-child(3)::before {
+      content: "详细地址"; }
+    #address .address .inputBox ul li:nth-child(4)::before {
+      content: "联系电话"; }
+    #address .address .inputBox button {
+      width: 97.5%;
+      margin-left: 2%;
+      display: block;
+      font-size: 0.3rem;
+      color: white;
+      background-color: #f44b49;
+      line-height: 0.65rem;
+      border-radius: 0.08rem; }
+#address .jClose {
+  margin-top: -0.8rem; }
 
 /*# sourceMappingURL=index.css.map */

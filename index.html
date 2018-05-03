@@ -7,9 +7,12 @@
 		<meta content="yes" name="apple-mobile-web-app-capable"/>
 		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 		<meta content="telephone=no" name="format-detection"/>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" href="css/ydui.css" />
 		<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/reset.min.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		
 		<script type="text/javascript" src="js/rem.js" ></script>
 		<script type="text/javascript" src="js/scrollReveal.js" ></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -18,11 +21,45 @@
 	<body>
 		<div id="app">
 			<!--首页-->
-			<div id="page1">
+			<div id="page1" v-show="pageIndex==1">
 				<div class="page11">
 					<img src="img/sni3.png" />
-					<div class="page111"  :class="{animated:home,bounceInDown:home,page1111:entryCode==2}" >
+					<div class="page111" v-if="btnCode==1||btnCode==3" :class="{animated:home,bounceInDown:home,page1111:entryCode==2}" >
 						<img src="img/sni4.png" />
+					</div>
+					<div class="page1112" v-if="btnCode==2" :class="{animated:home,bounceInDown:home}" >
+						<div>
+							<img src="img/sni38.png" />
+							<p>{{wxNumber}}ml</p>
+							<p>{{1000-wxNumber}}ml</p>
+						</div>
+					</div>
+					<div class="page1113" v-if="btnCode==4" style="display: none;">
+						<div class="cf" align="center">
+							<ul>
+								<li>
+									<img src="img/sni41.png" />
+								</li>
+								<li>
+									<div>
+										<p>{{wxName}}</p>
+										<p>{{wxName}}</p>
+									</div>
+									
+								</li>
+								<li>
+									<img src="img/sni42.png"/>
+								</li>
+							</ul>
+							
+						</div>
+						<div class="page11131">
+							<img src="img/sni40.png" class="floatl" />
+						</div>
+					</div>
+					<div class="page1114" v-if="btnCode==5||btnCode==6" :class="{animated:home,bounceInDown:home}">
+						<p>您已成功领取榨汁机</p>
+						<p>叫上朋友都来领吧！</p>
 					</div>
 					<div class="page112"  :class="{animated:home,bounceIn:home}">
 						<img src="img/sni1.png" />
@@ -30,7 +67,7 @@
 					<div class="page113">
 						<img src="img/sni2.png" />
 					</div>
-					<div class="entry animated fadeInUp" v-if="entryCode==2">
+					<div class="entry animated fadeInUp" v-if="entryCode==2&&btnCode==3">
 						<p>{{entryName}}：快！帮我榨果汁，免费领榨汁机套餐</p>
 					</div>
 				</div>
@@ -54,6 +91,8 @@
 						</div>
 						
 					</div>
+					<div class="page1223">
+					</div>
 					<div class="page123">
 						<div class="page1232">
 							<div class="page1231">
@@ -70,21 +109,14 @@
 						<p>{{wxNumber}}毫升</p>
 					</div>
 				</div>
-				<div class="page13"  :class="{animated:home,rotateIn:home,page131:btnCode==5}">
-					<a href="###" v-if="btnCode==1">
-						<img src="img/sni13.png" />
-					</a>
-					<a href="###" v-else-if="btnCode==2">
-						<img src="img/sni36.png" />
-					</a>
-					<a href="###" v-else-if="btnCode==3">
-						<img src="img/sni34.png" />
-					</a>
-					<a href="###" v-else-if="btnCode==4">
-						<img src="img/sni35.png" />
-					</a>
-					<a href="###" v-else="btnCode==5">
-						<img src="img/sni37.png" />
+				<div class="page13"  :class="{animated:home,rotateIn:home,page131:btnCode==6}">
+					<a href="###" @click="btnClick">
+						<img src="img/sni13.png"  v-if="btnCode==1" />
+						<img src="img/sni36.png"  v-else-if="btnCode==2"/>
+						<img src="img/sni34.png"  v-else-if="btnCode==3"/>
+						<img src="img/sni35.png"  v-else-if="btnCode==4"/>
+						<img src="img/sni48.png"  v-else-if="btnCode==5"/>
+						<img src="img/sni37.png"  v-else="btnCode==6"/>
 					</a>
 				</div>
 				<div class="changePage">
@@ -106,7 +138,18 @@
 								<img src="img/sni18.png"  data-scroll-reveal="enter from the bottom  over 0.5s"/>
 							</li>
 						</ul>
-						<a href="###" @click="backTop" style="display: none;"><img src="img/sni19.png"/></a>
+						<a href="###" @click="backTop" style="display: none;"  v-if="btnCode==1">
+							<img src="img/sni19.png"/>
+						</a>
+						<a href="###" @click="shares" style="display: none;" v-else-if="btnCode==2">
+							<img src="img/sni39.png"/>							
+						</a>
+						<a href="###" @click="backTop" style="display: none;" v-else-if="btnCode==3">
+							<img src="img/sni43.png"/>							
+						</a>
+						<a href="###" @click="backTop" style="display: none;" v-else-if="btnCode==4">
+							<img src="img/sni44.png"/>							
+						</a>
 					</div>
 					<div class="changeContent2" v-show="change==2">
 						<ul>
@@ -142,17 +185,129 @@
 					</div>
 				</div>
 			</div>
+			<div id="page2" v-show="pageIndex==2">
+				<div class="page11">
+					<img src="img/sni3.png" />
+					<div class="page111" :class="{animated:pageIndex==2,bounceInDown:pageIndex==2}" >
+						<img src="img/sni4.png" />
+					</div>
+
+					<div class="page112" :class="{animated:pageIndex==2,bounceIn:pageIndex==2}">
+						<img src="img/sni1.png" />
+					</div>
+					<div class="page113">
+						<img src="img/sni2.png" />
+					</div>
+				</div>
+				<div class="page21" :class="{animated:pageIndex==2,bounceInUp:pageIndex==2}">
+					<div>
+						<div>
+							<p>长按识别二维码，免费领便携式多功能榨汁机</p>
+						</div>
+						<div class="clearFloat">
+							<div class="floatl">
+								<img src="img/sni45.png" />
+							</div>
+							<div class="floatr">
+								<img src="img/sni46.gif" />
+							</div>
+						</div>
+						<div>
+							<p>温馨提示：帮好友请返回好友发你的连接哟！</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
 		</div>
-		
+		<div id="address" class="pw" style="display: none;">
+			<div class="address"><img src="img/sni47.png">
+				<div class="gj1 animated bounceInDown"><img src="img/sni31.png"></div>
+				<div class="gj2 animated bounceIn">
+					<p>请填写您的收货信息</p>
+				</div>
+				<div class="inputBox">
+					<form>
+						<ul>
+							<li>
+								<input type="text" placeholder="姓名"/>
+							</li>
+							<li>
+								<input type="text" placeholder="省市区" id="city"/>
+							</li>
+							<li>
+								<input type="text" placeholder="详细地址" />
+							</li>
+							<li>
+								<input type="text" placeholder="电话号码" />
+							</li>
+						</ul>
+						<p>温馨提示：如信息填写有误，将无法领取奖品！</p>
+						<button class="animated bounceIn">确认提交</button>
+					</form>
+					
+				</div>
+			</div>
+			<div class="jClose animated fadeInUp">
+				<a href="###"><img src="img/sni28.png"></a>
+			</div>
+		</div>
 	</body>
+	<script type="text/javascript" src="js/ydui.citys.js" ></script>
+	<script type="text/javascript" src="js/ydui.js" ></script>
 	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
-//		sharing();
+		function showAddress(){
+			$('#address').show();
+			stop();
+			$('#address .address .inputBox button').on('click',function(){
+				$('#address').hide();
+				gJuice(3,0);
+			});
+			$('#address .jClose a').on('click',function(){
+				$(this).addClass('animated fadeOutDown');
+				$('.address').addClass('animated bounceOut');
+				setTimeout(function(){
+					move();
+					$('#address .jClose a').removeClass('animated fadeOutDown');
+					$('#address').hide().find('.address').removeClass('animated bounceOut');
+				},900);
+			});
+				
+			
+		}
+		var mo=function(e){e.preventDefault();};
+		/***禁止滑动***/
+		function stop(){
+			 $('body').css('overflow','hidden');     
+			 document.addEventListener("touchmove",mo,false);//禁止页面滑动
+		}
+		/***取消滑动限制***/
+		function move(){
+			$('body').css('overflow-y','scroll');  
+			document.removeEventListener("touchmove",mo,false);        
+		}
+		//选择省市区
+		!function () {
+	        var $target = $('#city');
+	
+	        $target.citySelect();
+	
+	        $target.on('click', function (event) {
+	            event.stopPropagation();
+	            $target.citySelect('open');
+	        });
+	
+	        $target.on('done.ydui.cityselect', function (ret) {
+	            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+	        });
+	    }();
+	    $('#city').blur();
 		var app =  new Vue({
 		  el:'#app',
 		  data:{
 		  	home:true,//首页
-		  	wxNumber:800,//毫升数
+		  	wxNumber:0,//毫升数
 		  	wxSrc:'img/sni7.png',//微信头像
 		  	wxName:'阿木',//微信名
 		  	proName:'榨汁1000毫升即中奖',//奖品名称
@@ -160,6 +315,8 @@
 		  	entryCode:1,//自己进入还是从链接进入
 		  	btnCode:1,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
 		  	entryName:'隔壁老李',
+		  	pageIndex:1,
+		  	addresshow:false,
 		  	rules:[
 		  		{
 		  			'src':'img/sni20.png',
@@ -187,7 +344,7 @@
 				"便携式榨汁机",
 				"活动说明"
 			],
-			help:1,
+			help:0,
 			elseHelpN:0,
 			elseHelp:[
 				{
@@ -223,6 +380,9 @@
 	            	scrollTop: 0
 	        	}, 500); 
 		  	},
+		  	shares(){
+		  		sharing()
+		  	},
 		  	threeChoice(e){
 		  		var self = this;
 		  		self.change = e;
@@ -234,31 +394,48 @@
 	            		scrollTop: top
 	        		}, 500);
 		  		}
+		  	},
+		  	btnClick(){
+		  		var self = this
+		  		switch(self.btnCode)
+		  		{
+		  			case 1:
+		  				//获取数据
+		  				$.get('json/ml.json',function(data){
+		  					var mydata = data;
+		  					gJuice(0,data.ml);
+		  				});
+		  				
+		  				break;
+		  			case 2:
+		  			case 6:
+		  				sharing();
+		  				break;
+		  			case 3:
+		  				//获取数据
+		  				$.get('json/ml.json',function(data){
+		  					var mydata = data;
+		  					gJuice(2,data.ml);
+		  				});
+		  				gJuice(2,188);
+		  				break;
+		  			case 4:
+		  				self.pageIndex = 2;
+		  				break;
+		  			case 5:
+		  				showAddress();
+		  				
+		  				break;
+		  		}
 		  	}
 		  },
 		  created:function(){
+		  	//设置帮助人数
 		  	var self = this;
 		  	self.elseHelpN = self.elseHelp.length;
-		  	
+		  	//毫升动画
 		  	var wxvar = self.wxNumber/1000;
-		  	setTimeout(function(){
-		  		if(wxvar<=0.74)
-			  	{
-			  		
-			  		$('.page122').css('width',wxvar*100+'%');
-			  		$('.page125').css('left',(wxvar-0.1)*100+'%').show().addClass('animated bounceIn');
-			  	}else{
-			  		$('.page122').css('width','79.8%');
-			  		setTimeout(function(){
-			  			$('#page1 .page1222').fadeOut(50);
-			  		},900)
-			  		setTimeout(function(){
-			  			$('#page1 .page123 .page1232').css('width',parseInt((wxvar-0.74)/0.26*100)+'%');
-			  			$('.page125').css({'left':'78%','bottom':'100%'}).show().addClass('animated bounceIn');
-			  		},680);
-			  	}
-			  	
-		  	},1000);
+		  	setAnimate(wxvar,800);
 		  	
 		  	//距离
 			var topShow = $('#page1 .page13 a').offset().top+ $('#page1 .page13 a').height();
@@ -270,6 +447,8 @@
 					$('.changePage .changeContent1 a').fadeOut(500);
 				}
 			});
+			
+			$('#page2 .page21').height($(window).height()-$('#page2 .page11').height());
 		  }
 		})
 		//开启滑动动画
@@ -281,5 +460,7 @@
 					});
 				})();
 			};
+			
 	</script>
+	
 </html>
