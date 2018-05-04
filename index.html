@@ -150,6 +150,12 @@
 						<a href="###" @click="backTop" style="display: none;" v-else-if="btnCode==4">
 							<img src="img/sni44.png"/>							
 						</a>
+						<a href="###" @click="backTop" style="display: none;" v-else-if="btnCode==5">
+							<img src="img/sni50.png"/>							
+						</a>
+						<a href="###" @click="shares" style="display: none;" v-else-if="btnCode==6">
+							<img src="img/sni49.png"/>							
+						</a>
 					</div>
 					<div class="changeContent2" v-show="change==2">
 						<ul>
@@ -313,7 +319,7 @@
 		  	proName:'榨汁1000毫升即中奖',//奖品名称
 		  	change:0,//改变模块
 		  	entryCode:1,//自己进入还是从链接进入
-		  	btnCode:1,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
+		  	btnCode:5,//按钮状态    1--我要榨汁机  2--邀请好友帮忙 3--帮TA一把 4--我也要榨汁机
 		  	entryName:'隔壁老李',
 		  	pageIndex:1,
 		  	addresshow:false,
